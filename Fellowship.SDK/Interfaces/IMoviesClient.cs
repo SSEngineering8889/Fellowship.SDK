@@ -9,7 +9,7 @@ namespace Fellowship.SDK.Interfaces;
 public interface IMoviesClient
 {
     /// <summary>
-    /// Gets all movies with optional filtering, sorting, and pagination
+    /// Gets all movies with optional filtering and pagination
     /// </summary>
     /// <param name="limit">Maximum number of results to return</param>
     /// <param name="page">Page number for pagination</param>

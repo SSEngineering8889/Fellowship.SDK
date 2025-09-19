@@ -33,7 +33,6 @@ FellowshipClient
 Supporting Components:
 ├── HttpHelper (Internal)
 ├── Filter System
-├── Sorting System
 ├── Models
 └── Exception Handling
 ```
@@ -83,8 +82,6 @@ public class FellowshipClient
 Task<IEnumerable<TModel>> GetAllAsync(
     int? limit = null,
     int? page = null,
-    string? sortField = null,
-    string? sortOrder = null,
     IEnumerable<Filter<TModel>>? filters = null,
     CancellationToken ct = default)
 
@@ -160,31 +157,7 @@ Filter<TModel>
 - Regex validation with flag support
 - String-based query parameter generation
 
-### 5. Sorting System
-
-**Purpose**: Consistent sorting across all API endpoints.
-
-**Design Principles**:
-- Constants for type safety
-- Consistent naming with API
-- Extensible design
-
-**Implementation**:
-```csharp
-public static class SortOrder
-{
-    public const string Ascending = "asc";
-    public const string Descending = "desc";
-}
-
-public static class MovieSort
-{
-    public const string Name = "name";
-    public const string RuntimeInMinutes = "runtimeInMinutes";
-}
-```
-
-### 6. Data Models
+### 5. Data Models
 
 **Purpose**: Strongly-typed representations of API responses.
 
@@ -217,7 +190,7 @@ public class Movie
 - Primitive types for API-provided data
 - Nullable reference type annotations
 
-### 7. Exception Handling
+### 6. Exception Handling
 
 **Purpose**: Structured error handling for API failures.
 
@@ -354,7 +327,6 @@ Fellowship.SDK.1.0.0.nupkg
 5. **Bulk Operations**: Support for batch requests
 
 ### Technical Debt
-1. **HttpHelper Sorting**: Clean up hardcoded sort field mapping
 2. **Error Messages**: Improve error message localization
 3. **Documentation**: Generate XML documentation for IntelliSense
 
