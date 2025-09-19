@@ -9,7 +9,7 @@ namespace Fellowship.SDK.Interfaces;
 public interface IQuotesClient
 {
     /// <summary>
-    /// Gets all quotes with optional filtering, sorting, and pagination
+    /// Gets all quotes with optional filtering and pagination
     /// </summary>
     /// <param name="limit">Maximum number of results to return</param>
     /// <param name="page">Page number for pagination</param>

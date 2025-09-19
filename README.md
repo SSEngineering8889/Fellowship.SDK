@@ -1,8 +1,5 @@
 # Fellowship SDK - Lord of the Rings API Client
 
-[![CI/CD Pipeline](https://github.com/YOUR_USERNAME/Fellowship.SDK/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/Fellowship.SDK/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/YOUR_USERNAME/Fellowship.SDK/actions/workflows/codeql.yml/badge.svg)](https://github.com/YOUR_USERNAME/Fellowship.SDK/actions/workflows/codeql.yml)
-[![NuGet Version](https://img.shields.io/nuget/v/Fellowship.SDK)](https://www.nuget.org/packages/Fellowship.SDK)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A .NET 8 SDK for accessing [The One API](https://the-one-api.dev/) - a comprehensive Lord of the Rings database containing information about movies, quotes, characters, and more.
@@ -12,7 +9,6 @@ A .NET 8 SDK for accessing [The One API](https://the-one-api.dev/) - a comprehen
 - **Movies API**: Retrieve information about Lord of the Rings movies
 - **Quotes API**: Access memorable quotes from the films
 - **Advanced Filtering**: Support for complex filtering with multiple operators
-- **Sorting**: Sort results by any field in ascending or descending order
 - **Pagination**: Handle large datasets with built-in pagination support
 - **Type Safety**: Strongly typed models with proper JSON serialization
 - **Async/Await**: Full async support with cancellation tokens
@@ -131,14 +127,9 @@ var highRatedMovies = await client.Movies.GetAllAsync(
 );
 ```
 
-### 4. Sorting and Pagination
+### 4. Pagination
 
 ```csharp
-// Sort movies by runtime (descending)
-var sortedMovies = await client.Movies.GetAllAsync(
-    sortField: nameof(Movie.RuntimeInMinutes),
-    sortOrder: SortOrder.Descending
-);
 
 // Paginated results
 var pagedQuotes = await client.Quotes.GetAllAsync(
@@ -195,7 +186,6 @@ The repository includes a sample console application (`lotrRunner`) that demonst
 The sample application demonstrates:
 - Filtering movies by runtime
 - Searching quotes with regex
-- Sorting movies by runtime
 
 ## Running Tests
 
@@ -257,7 +247,6 @@ Fellowship.SDK/
 │   ├── Api/                 # API clients
 │   ├── Models/              # Data models
 │   ├── Filters/             # Filtering system
-│   └── Sorting/             # Sorting utilities
 ├── Fellowdhip.SDK.Tests/    # Unit tests
 ├── lotrRunner/              # Sample application
 └── Fellowship.SDK.sln       # Solution file

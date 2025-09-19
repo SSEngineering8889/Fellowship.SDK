@@ -62,7 +62,6 @@ Fellowship.SDK/
 │   ├── Api/                 # API client implementations
 │   ├── Models/              # Data models
 │   ├── Filters/             # Filtering system
-│   └── Sorting/             # Sorting utilities
 ├── Fellowdhip.SDK.Tests/    # Unit tests
 ├── lotrRunner/              # Sample application
 └── docs/                    # Documentation
